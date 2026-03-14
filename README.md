@@ -1,38 +1,72 @@
-Role Name
-=========
+# Ansible Role: Base Configuration
 
-A brief description of the role goes here.
+This role performs baseline configuration for Linux servers before application deployment.
 
-Requirements
-------------
+---
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+## 📌 Overview
 
-Role Variables
---------------
+The **conf_base** role prepares servers with common configuration used in infrastructure environments.
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+It is typically the **first role executed in automation pipelines**.
 
-Dependencies
-------------
+---
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+## 🚀 Features
 
-Example Playbook
-----------------
+* System preparation
+* Base configuration
+* Infrastructure standardization
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+---
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+## 🧰 Requirements
 
-License
--------
+* Ansible >= 2.9
+* Linux system
 
-BSD
+---
 
-Author Information
-------------------
+## ⚙️ Role Variables
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Example variables:
+
+```yaml
+base_update_packages: true
+base_timezone: UTC
+```
+
+---
+
+## ▶️ Example Playbook
+
+```yaml
+- hosts: all
+  become: true
+  roles:
+    - gustavoohrodrigues.conf_base
+```
+
+---
+
+## 📦 Installation
+
+```bash
+ansible-galaxy install gustavoohrodrigues.conf_base
+```
+
+---
+
+## Author
+
+**Gustavo Henrique Rodrigues**
+SysAdmin
+
+LinkedIn
+https://www.linkedin.com/in/gustavo-henrique-rodrigues-3070a5260
+
+---
+
+## 📜 License
+
+MIT
